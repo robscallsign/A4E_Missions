@@ -1,0 +1,23 @@
+DCS A-4E Case 1 recovery with the MOOSE AIRBOSS LSO
+
+Radio Comms Plan:
+Button 1: CV-59 Approach  264Mhz
+Button 2: CV-59 Marshall  265Mhz
+Button 3: CV-59 LSO       256Mhz
+Button 4: Texaco (low tanker) 254Mhz
+Button 5: Arco (high tanker) 250Mhz
+
+CV-59 USS Forrestal Recovery Information
+TACAN: 59X
+ICLS:  9
+
+Tankers Support:
+
+- S3B Low Tanker, Texaco, 60X, 254Mhz, orbit at 6000 feet
+
+- KC130 High Tanker, Arco, 55X, 250Mhz, orbit at 15000 feet
+
+Acknowledgements and Attribution: 
+- FunkyFrank/MOOSE for permission to include the MOOSE script and AIRBOSS sounds
+https://github.com/FlightControl-Master/MOOSE
+- Tony "Yoda" G. https://github.com/madmoney99/  for AIRBOSS Script development and support
