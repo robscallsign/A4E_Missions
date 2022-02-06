@@ -6,7 +6,7 @@ turn the carrier into the wind, and control recovery tankers, etc.
 
 There are two versions of this mission:
 
-**A4_carrier_landing_training_v1.miz** This is the standalone mission that most people will want to use.
+**A4_carrier_landing_training_v2.miz** This is the standalone mission that most people will want to use.
 
 **A4_carrier_landing_training_v1_dev.miz**   This is a version for scriptors or developers that load the scripts externally,
 they are assumed to be in C:\HypeMan\A4_Airboss
