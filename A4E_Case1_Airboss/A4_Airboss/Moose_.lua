@@ -47361,42 +47361,31 @@ function AIRBOSS:_GetAircraftParameters(playerData, step)
 
   elseif step==AIRBOSS.PatternStep.EARLYBREAK then
 
-    if hornet or tomcat or harrier or goshawk then
-      alt=UTILS.FeetToMeters(800)
-    elseif skyhawk then
-      alt=UTILS.FeetToMeters(800)
-	  speed=UTILS.KnotsToMps(250)
+    if hornet or tomcat or harrier or goshawk or skyhawk then
+      alt=UTILS.FeetToMeters(800)    
     end
 
   elseif step==AIRBOSS.PatternStep.LATEBREAK then
 
-    if hornet or tomcat or harrier or goshawk then
-      alt=UTILS.FeetToMeters(800)
-    elseif skyhawk then
-      alt=UTILS.FeetToMeters(800)
-	  speed=UTILS.KnotsToMps(250)
+    if hornet or tomcat or harrier or goshawk or skyhawk then
+      alt=UTILS.FeetToMeters(800)    
     end
 
   elseif step==AIRBOSS.PatternStep.ABEAM then
 	
-    if hornet or tomcat or harrier or goshawk then
-      alt=UTILS.FeetToMeters(600)
-    elseif skyhawk then
-      alt=UTILS.FeetToMeters(600)
-	  speed=UTILS.KnotsToMps(125)
+    if hornet or tomcat or harrier or goshawk or skyhawk then
+      alt=UTILS.FeetToMeters(600)    
     end
 
     aoa=aoaac.OnSpeed
 
-	dist=UTILS.NMToMeters(1.1)
+	dist=UTILS.NMToMeters(1.2)
     if harrier then
       -- 0.8 to 1.0 NM
-      dist=UTILS.NMToMeters(0.9)    
-	elseif skyhawk then 
-		speed=UTILS.KnotsToMps(125)
+      dist=UTILS.NMToMeters(0.9)	
 	elseif goshawk then
       -- 0.9 to 1.1 NM per natops ch.4 page 48
-      dist=UTILS.NMToMeters(0.9)
+      dist=UTILS.NMToMeters(1.0)
     end
 
   elseif step==AIRBOSS.PatternStep.NINETY then
@@ -47406,8 +47395,11 @@ function AIRBOSS:_GetAircraftParameters(playerData, step)
 	elseif goshawk then
       alt=UTILS.FeetToMeters(450)
     elseif skyhawk then
-      alt=UTILS.FeetToMeters(600)
-	  speed=UTILS.KnotsToMps(125)
+	  -- 1977 A-4E/F/G/M NATOPS specifies being at 600 feet at the ABEAM position.
+	  -- 1982 TA-4J NATOPS specifies being at 450 feet at the ABEAM
+	  -- 1956 A-4 A/B/C NATOPS want 450 ABEAM AND 450 at the 90
+      -- alt=UTILS.FeetToMeters(600)	  
+	  -- suggest ignoring skyhawk at the ABEAM -- too many variations in published NATOPS 
     elseif harrier then
       alt=UTILS.FeetToMeters(600)
     end
@@ -47420,9 +47412,9 @@ function AIRBOSS:_GetAircraftParameters(playerData, step)
       alt=UTILS.FeetToMeters(370)
     elseif tomcat then
       alt=UTILS.FeetToMeters(430) -- Tomcat should be a bit higher as it intercepts the GS a bit higher.
-    elseif skyhawk then
-      alt=UTILS.FeetToMeters(400) --?
-	  speed=UTILS.KnotsToMps(125)
+    --elseif skyhawk then
+    --  alt=UTILS.FeetToMeters(430) --?	  
+	-- ignore the skyhawk's altitude here for now
     end
     -- Harrier wont get into wake pos. Runway is not angled and it stays port.
 
@@ -47434,9 +47426,9 @@ function AIRBOSS:_GetAircraftParameters(playerData, step)
       alt=UTILS.FeetToMeters(300)
     elseif tomcat then
       alt=UTILS.FeetToMeters(360)
-    elseif skyhawk then
-      alt=UTILS.FeetToMeters(330) --?
-	  speed=UTILS.KnotsToMps(125)
+    -- elseif skyhawk then
+      -- alt=UTILS.FeetToMeters(360) --?	  
+	  -- ignore the skyhawk for now
     elseif harrier then
       -- 300-325 ft
       alt=UTILS.FeetToMeters(300)-- Need to verify
